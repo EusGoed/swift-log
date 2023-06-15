@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 import Foundation
-@testable import Logging
+@testable import LoggingExt
 import XCTest
 #if os(Windows)
 import WinSDK

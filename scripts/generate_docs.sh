@@ -70,7 +70,7 @@ cat > "$module_switcher" <<"EOF"
 
 SwiftLog is a Swift logging API package.
 
-To get started with SwiftLog, [`import Logging`](../Logging/index.html). The
+To get started with SwiftLog, [`import LoggingExt`](../Logging/index.html). The
 most important type is [`Logger`](https://apple.github.io/swift-log/docs/current/Logging/Structs/Logger.html)
 which you can use to emit log messages.
 EOF

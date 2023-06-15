@@ -33,7 +33,7 @@ and to your application/library target, add `"Logging"` to your `dependencies`, 
 
 ```swift
 // 1) let's import the logging API package
-import Logging
+import LoggingExt
 
 // 2) we need to create a logger, the label works similarly to a DispatchQueue label
 let logger = Logger(label: "com.example.BestExampleApp.main")

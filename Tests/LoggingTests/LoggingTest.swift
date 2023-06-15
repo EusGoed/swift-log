@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 //===----------------------------------------------------------------------===//
-@testable import Logging
+@testable import LoggingExt
 import XCTest
 
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)

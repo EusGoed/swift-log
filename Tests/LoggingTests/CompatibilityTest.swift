@@ -12,7 +12,7 @@
 //
 //===----------------------------------------------------------------------===//
 
-/* NOT @testable */ import Logging
+/* NOT @testable */ import LoggingExt
 import XCTest
 
 final class CompatibilityTest: XCTestCase {

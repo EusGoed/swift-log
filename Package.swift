@@ -18,19 +18,19 @@ import PackageDescription
 let package = Package(
     name: "swift-log-pub",
     products: [
-        .library(name: "LoggingExt", targets: ["Logging"]),
+        .library(name: "LoggingExt", targets: ["LoggingExt"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     targets: [
         .target(
-            name: "Logging",
+            name: "LoggingExt",
             dependencies: []
         ),
         .testTarget(
             name: "LoggingTests",
-            dependencies: ["Logging"]
+            dependencies: ["LoggingExt"]
         ),
     ]
 )

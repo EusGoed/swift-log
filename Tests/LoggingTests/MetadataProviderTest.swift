@@ -11,7 +11,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 //===----------------------------------------------------------------------===//
-@testable import Logging
+@testable import LoggingExt
 import XCTest
 
 #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
@@ -86,7 +86,7 @@ public struct LogHandlerThatDidNotImplementMetadataProviders: LogHandler {
         self.testLogging = testLogging
     }
 
-    public subscript(metadataKey _: String) -> Logging.Logger.Metadata.Value? {
+    public subscript(metadataKey _: String) -> LoggingExt.Logger.Metadata.Value? {
         get {
             return nil
         }
@@ -95,9 +95,9 @@ public struct LogHandlerThatDidNotImplementMetadataProviders: LogHandler {
         }
     }
 
-    public var metadata: Logging.Logger.Metadata = [:]
+    public var metadata: LoggingExt.Logger.Metadata = [:]
 
-    public var logLevel: Logging.Logger.Level = .trace
+    public var logLevel: LoggingExt.Logger.Level = .trace
 
     public func log(level: Logger.Level,
                     message: Logger.Message,
@@ -116,7 +116,7 @@ public struct LogHandlerThatDidImplementMetadataProviders: LogHandler {
         self.testLogging = testLogging
     }
 
-    public subscript(metadataKey _: String) -> Logging.Logger.Metadata.Value? {
+    public subscript(metadataKey _: String) -> LoggingExt.Logger.Metadata.Value? {
         get {
             return nil
         }
@@ -125,9 +125,9 @@ public struct LogHandlerThatDidImplementMetadataProviders: LogHandler {
         }
     }
 
-    public var metadata: Logging.Logger.Metadata = [:]
+    public var metadata: LoggingExt.Logger.Metadata = [:]
 
-    public var logLevel: Logging.Logger.Level = .trace
+    public var logLevel: LoggingExt.Logger.Level = .trace
 
     public var metadataProvider: Logger.MetadataProvider?
 

@@ -300,7 +300,7 @@ Imagine we don't have metadata providers, we'd have to manually set trace IDs on
 
 ```swift
 import Tracing
-import Logging
+import LoggingExt
 
 let contextualLogger = InstrumentationSystem.tracer.populateTraceMetadata(logger)
 contextualLogger.info("Request received.")

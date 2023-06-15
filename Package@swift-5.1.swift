@@ -18,16 +18,16 @@ import PackageDescription
 let package = Package(
     name: "swift-log-pub",
     products: [
-        .library(name: "LoggingExt", targets: ["Logging"]),
+        .library(name: "LoggingExt", targets: ["LoggingExt"]),
     ],
     targets: [
         .target(
-            name: "Logging",
+            name: "LoggingExt",
             dependencies: []
         ),
         .testTarget(
             name: "LoggingTests",
-            dependencies: ["Logging"]
+            dependencies: ["LoggingExt"]
         ),
     ]
 )
