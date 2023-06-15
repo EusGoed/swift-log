@@ -1186,11 +1186,11 @@ internal typealias CFilePointer = UnsafeMutablePointer<FILE>
 /// A wrapper to facilitate `print`-ing to stderr and stdio that
 /// ensures access to the underlying `FILE` is locked to prevent
 /// cross-thread interleaving of output.
-internal struct StdioOutputStream: TextOutputStream {
+public struct StdioOutputStream: TextOutputStream {
     internal let file: CFilePointer
-    internal let flushMode: FlushMode
+    public let flushMode: FlushMode
 
-    internal func write(_ string: String) {
+    public func write(_ string: String) {
         self.contiguousUTF8(string).withContiguousStorageIfAvailable { utf8Bytes in
             #if os(Windows)
             _lock_file(self.file)
@@ -1217,11 +1217,11 @@ internal struct StdioOutputStream: TextOutputStream {
 
     /// Flush the underlying stream.
     /// This has no effect when using the `.always` flush mode, which is the default
-    internal func flush() {
+    public func flush() {
         _ = fflush(self.file)
     }
 
-    internal func contiguousUTF8(_ string: String) -> String.UTF8View {
+    public func contiguousUTF8(_ string: String) -> String.UTF8View {
         var contiguousString = string
         #if compiler(>=5.1)
         contiguousString.makeContiguousUTF8()
@@ -1231,11 +1231,11 @@ internal struct StdioOutputStream: TextOutputStream {
         return contiguousString.utf8
     }
 
-    internal static let stderr = StdioOutputStream(file: systemStderr, flushMode: .always)
-    internal static let stdout = StdioOutputStream(file: systemStdout, flushMode: .always)
+    public static let stderr = StdioOutputStream(file: systemStderr, flushMode: .always)
+    public static let stdout = StdioOutputStream(file: systemStdout, flushMode: .always)
 
     /// Defines the flushing strategy for the underlying stream.
-    internal enum FlushMode {
+    public enum FlushMode {
         case undefined
         case always
     }
