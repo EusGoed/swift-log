@@ -16,9 +16,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-log",
+    name: "swift-log-eus",
     products: [
-        .library(name: "Logging", targets: ["Logging"]),
+        .library(name: "LoggingExt", targets: ["Logging"]),
     ],
     targets: [
         .target(
